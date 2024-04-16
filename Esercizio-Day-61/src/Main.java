@@ -5,7 +5,6 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
         es1 primoEs = new es1();
         String PD = "by my guiding hand, perfected they stand";
         System.out.println(primoEs.stringaPD(PD));
