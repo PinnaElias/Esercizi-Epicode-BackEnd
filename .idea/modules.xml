@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Esercizi-Epicode-BackEnd.iml" filepath="$PROJECT_DIR$/.idea/Esercizi-Epicode-BackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-60/Esercizio-Day-60.iml" filepath="$PROJECT_DIR$/Esercizio-Day-60/Esercizio-Day-60.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-61/Esercizio-Day-61.iml" filepath="$PROJECT_DIR$/Esercizio-Day-61/Esercizio-Day-61.iml" />
+    </modules>
+  </component>
+</project>
