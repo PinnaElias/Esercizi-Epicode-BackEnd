@@ -12,5 +12,9 @@ import java.util.Scanner;
             int c = scan.nextInt();
             int d = scan.nextInt();
             System.out.println(ret.doppioRettangolo(b,a,c,d));
+
+            String num = "079 321 4200";
+            SIM sim = new SIM(num);
+            sim.print(num);
         }
     }
