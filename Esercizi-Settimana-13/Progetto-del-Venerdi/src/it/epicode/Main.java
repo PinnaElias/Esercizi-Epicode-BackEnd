@@ -55,6 +55,6 @@ public class Main {
 
         } while (input != 0);
 
-        scan.close(); //ho scoperto cercando su internet che si dovrebbe fare così
+        scan.close(); //ho scoperto cercando su internet che gli scanner vanno chiusi alla fine
     }
 }
