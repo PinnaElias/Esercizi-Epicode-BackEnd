@@ -3,10 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Esercizi-Epicode-BackEnd.iml" filepath="$PROJECT_DIR$/.idea/Esercizi-Epicode-BackEnd.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-60/Esercizio-Day-60.iml" filepath="$PROJECT_DIR$/Esercizio-Day-60/Esercizio-Day-60.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-61/Esercizio-Day-61.iml" filepath="$PROJECT_DIR$/Esercizio-Day-61/Esercizio-Day-61.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-62/Esercizio-Day-62.iml" filepath="$PROJECT_DIR$/Esercizio-Day-62/Esercizio-Day-62.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Esercizio-Day-63/Esercizio-Day-63.iml" filepath="$PROJECT_DIR$/Esercizio-Day-63/Esercizio-Day-63.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-60/Esercizio-Day-60.iml" filepath="$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-60/Esercizio-Day-60.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-61/Esercizio-Day-61.iml" filepath="$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-61/Esercizio-Day-61.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-day-62/Esercizio-Day-62.iml" filepath="$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-day-62/Esercizio-Day-62.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-63/Esercizio-Day-63.iml" filepath="$PROJECT_DIR$/Esercizi-Settimana-13/Esercizio-Day-63/Esercizio-Day-63.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizi-Settimana-13/Progetto-del-Venerdi/Progetto-del-Venerdi.iml" filepath="$PROJECT_DIR$/Esercizi-Settimana-13/Progetto-del-Venerdi/Progetto-del-Venerdi.iml" />
     </modules>
   </component>
 </project>
