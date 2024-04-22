@@ -11,7 +11,7 @@ public class Main {
         FileMultimediale mp3_1 = new Audio("Creep ", 5, 4);
         FileMultimediale vid_1 = new Video("Capodanno_2022 ", 3, 5, 3);
         FileMultimediale mp3_2 = new Audio("QUEEN ", 8, 2);
-        FileMultimediale mp3_3 = new Audio("To_the_Edge ", 10, 4);
+        FileMultimediale mp3_3 = new Audio("To_the_Edge  ", 10, 4);
 
         Scanner scan = new Scanner(System.in);
 
