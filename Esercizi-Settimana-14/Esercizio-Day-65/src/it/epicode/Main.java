@@ -18,7 +18,7 @@ public class Main {
 
         for (int numero: numeri ) { //for avanzato
             System.out.println(numero);
-        }
+        };
 
         public static void inserisciArray(int[] array) {
             Scanner scan = new Scanner(
