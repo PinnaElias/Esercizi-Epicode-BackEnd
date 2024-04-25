@@ -5,32 +5,42 @@ import java.util.Set;
 
 public class rubrica {
 
-        private HashMap<String, String> rubrica;
+    private HashMap<String, String> rubrica;
 
-        public void inserisciContatto(String nome, String numero) {
+    public rubrica() {
+        this.rubrica = new HashMap<>();
+    }
+
+
+    public void inserisciContatto(String nome, String numero) {
+        try {
             rubrica.put(nome, numero);
-        }
-
-        public void eliminaContatto(String nome, String numero) {
-            rubrica.remove(nome);
-        }
-
-        public void cercaPerNome(String nome) {
-            rubrica.get(nome);
-        }
-
-        public String cercaPerTelefono(String numero) {
-            Set<String> nomi = rubrica.keySet();
-
-            for (String nome:nomi) {
-                String numeroTelefono = rubrica.get(nome);
-                if(numeroTelefono.equals(numero)) {
-                    return nome;
-                }
-            }
-            return null;
+        } catch (NullPointerException e) {
+            System.out.println("null");
         }
 
     }
+
+    public void eliminaContatto(String nome, String numero) {
+        rubrica.remove(nome);
+    }
+
+    public String cercaPerNome(String nome) {
+        return rubrica.getOrDefault(nome, "nome non trovato");
+    }
+
+    public String cercaPerTelefono(String numero) {
+        Set<String> nomi = rubrica.keySet();
+
+        for (String nome : nomi) {
+            String numeroTelefono = rubrica.get(nome);
+            if (numeroTelefono.equals(numero)) {
+                return nome;
+            }
+        }
+        return null;
+    }
+
+}
 
 
