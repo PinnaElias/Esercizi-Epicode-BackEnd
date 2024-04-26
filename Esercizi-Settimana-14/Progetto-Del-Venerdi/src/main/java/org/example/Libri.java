@@ -1,4 +1,5 @@
 package org.example;
 
-public class Libri {
+public class Libri extends Stampato {
+
 }
