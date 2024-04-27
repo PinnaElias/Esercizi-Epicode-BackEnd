@@ -49,7 +49,7 @@ abstract class Stampato {
     @Override
     public String toString() {
         return
-                "ISBN= " + ISBN +
+                "ISBN: " + ISBN +
                 ", title: " + title +
                 ", year: " + year +
                 ", number of pages:" +

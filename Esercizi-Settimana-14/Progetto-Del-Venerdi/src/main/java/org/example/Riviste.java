@@ -1,7 +1,7 @@
 package org.example;
 
 public class Riviste extends Stampato {
-    public Riviste(String ISBN, String title, int year, int length, String selectedPeriodicity) {
+    public Riviste(String ISBN, String title, int year, int length, String periodicity) {
         super(ISBN, title, year, length);
     }
 

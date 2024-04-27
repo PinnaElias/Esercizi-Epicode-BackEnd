@@ -2,7 +2,7 @@ package org.example;
 
 public class Libri extends Stampato {
 
-    public Libri(String ISBN, String title, int year, int length) {
+    public Libri(String ISBN, String title, int year, int length, String author, String genre) {
         super(ISBN, title, year, length);
     }
 
