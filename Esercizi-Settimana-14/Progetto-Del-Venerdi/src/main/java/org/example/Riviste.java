@@ -1,29 +1,25 @@
 package org.example;
 
-import java.sql.Array;
-
 public class Riviste extends Stampato {
-    public Riviste(String ISBN, String title, Long year, Long lenght, String selectedPeriodicity) {
-        super(ISBN, title, year, lenght);
+    public Riviste(String ISBN, String title, int year, int length, String selectedPeriodicity) {
+        super(ISBN, title, year, length);
     }
 
-    protected String[] periodicity = {"SETTIMANALE", "MENSILE", "SEMESTRALE"};
-    protected String selectedPeriodicity;
+    protected String[] possiblePeriodicity = {"SETTIMANALE", "MENSILE", "SEMESTRALE"};
+    protected String periodicity;
 
-    public String[] getPeriodicity() {
+    public String[] getPossiblePeriodicity() {
+        return possiblePeriodicity;
+    }
+
+    public String getPeriodicity() {
         return periodicity;
     }
 
-    public String getSelectedPeriodicity() {
-        return selectedPeriodicity;
-    }
-
-    //fai il setter appropriato
-
-    public void setPeriodicity(String Periodicity) {
-        for (String prd : periodicity){
+    public void setPossiblePeriodicity(String Periodicity) {
+        for (String prd : possiblePeriodicity){
             if (prd.equals(Periodicity)) {
-                this.selectedPeriodicity = Periodicity;
+                this.periodicity = Periodicity;
                 return;
             }  else {
                 System.out.println("Invalid input");

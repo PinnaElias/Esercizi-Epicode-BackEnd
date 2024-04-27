@@ -4,14 +4,14 @@ abstract class Stampato {
 
     protected String ISBN;
     protected String title;
-    protected Long year;
-    protected Long lenght;
+    protected int year;
+    protected int length;
 
-    public Stampato(String ISBN, String title, Long year, Long lenght) {
+    public Stampato(String ISBN, String title, int year, int length) {
         this.ISBN = ISBN;
         this.title = title;
         this.year = year;
-        this.lenght = lenght;
+        this.length = length;
     }
 
     public String getISBN() {
@@ -22,12 +22,12 @@ abstract class Stampato {
         return title;
     }
 
-    public Long getYear() {
+    public int getYear() {
         return year;
     }
 
-    public Long getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
     public void setISBN(String ISBN) {
@@ -38,11 +38,21 @@ abstract class Stampato {
         this.title = title;
     }
 
-    public void setYear(Long year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public void setLenght(Long lenght) {
-        this.lenght = lenght;
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "ISBN= " + ISBN +
+                ", title: " + title +
+                ", year: " + year +
+                ", number of pages:" +
+                " " + length ;
     }
 }
