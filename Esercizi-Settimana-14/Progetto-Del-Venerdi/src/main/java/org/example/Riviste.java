@@ -1,8 +1,11 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Riviste extends Stampato {
     public Riviste(String ISBN, String title, int year, int length, String periodicity) {
         super(ISBN, title, year, length);
+        setPeriodicity(periodicity);
     }
 
     protected String[] possiblePeriodicity = {"SETTIMANALE", "MENSILE", "SEMESTRALE"};
@@ -16,14 +19,24 @@ public class Riviste extends Stampato {
         return periodicity;
     }
 
-    public void setPossiblePeriodicity(String Periodicity) {
-        for (String prd : possiblePeriodicity){
-            if (prd.equals(Periodicity)) {
-                this.periodicity = Periodicity;
+    public void setPeriodicity(String periodicityInput) {
+        for (String prd : possiblePeriodicity) {
+            if (prd.equalsIgnoreCase(periodicityInput)) {
+                this.periodicity = periodicityInput;
                 return;
-            }  else {
-                System.out.println("Invalid input");
             }
         }
+        System.out.println("Invalid input");
     }
+
+
+    @Override
+    public String toString() {
+        return "Rivista {" +
+                "ISBN: " + ISBN + ", " + "Titolo: " + title + ", " + "Anno di uscita: " + year
+                + ", " + "Lunghezza in pagine: " + length + ", " +
+                "periodicità: " + periodicity +
+                '}';
+    }
+
 }

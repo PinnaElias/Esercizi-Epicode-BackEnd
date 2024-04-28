@@ -46,13 +46,4 @@ abstract class Stampato {
         this.length = length;
     }
 
-    @Override
-    public String toString() {
-        return
-                "ISBN: " + ISBN +
-                ", title: " + title +
-                ", year: " + year +
-                ", number of pages:" +
-                " " + length ;
-    }
 }
