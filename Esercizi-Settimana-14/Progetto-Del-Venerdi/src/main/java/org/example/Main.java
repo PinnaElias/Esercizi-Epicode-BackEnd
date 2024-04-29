@@ -29,8 +29,9 @@ public class Main {
         set.add(sei);
 
 
+        addToCatalogue(set);
 
-        Scanner isbnScan = new Scanner(System.in);
+     /*   Scanner isbnScan = new Scanner(System.in);
         String searchCode = isbnScan.nextLine().trim();
 
         Stampato risultato = searchByISBN(set, searchCode);
@@ -39,55 +40,85 @@ public class Main {
         } else {
             System.out.println("Nessun elemento trovato.");
         }
-
+*/
 
     }
 
 
-    public static void addToCatalogue(HashSet<Stampato> set) throws invalidNumber, stringLength {
+    public static void addToCatalogue(HashSet<Stampato> set) throws invalidNumber, stringLength, InvalidPeriodicity {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Vuoi aggiungere un libro o una rivista? (scrivi 'libro' o 'rivista'): ");
         String scelta = scanner.nextLine().toLowerCase();
 
         if ("libro".equals(scelta)) {
-
             System.out.println("Inserisci l'ISBN del libro:");
             String isbn = scanner.nextLine();
+            if (isbn.length() != 10) {
+                throw new stringLength("ISBN non valido");
+            }
 
             System.out.println("Inserisci il titolo del libro:");
             String titolo = scanner.nextLine();
+
+
             System.out.println("Inserisci l'anno di pubblicazione del libro:");
             int anno = scanner.nextInt();
+            if (!scanner.hasNextInt()) {
+                throw new invalidNumber("Non hai inserito un numero!.");
+            }
+
             scanner.nextLine();
             System.out.println("Inserisci la lunghezza del libro:");
             int lunghezza = scanner.nextInt();
+            if (!scanner.hasNextInt()) {
+                throw new invalidNumber("Non hai inserito un numero!.");
+            }
+
             scanner.nextLine();
             System.out.println("Inserisci l'autore del libro:");
             String autore = scanner.nextLine();
+
             System.out.println("Inserisci il genere del libro:");
             String genere = scanner.nextLine();
 
             Libri libro = new Libri(isbn, titolo, anno, lunghezza, autore, genere);
             set.add(libro);
+
         } else if ("rivista".equals(scelta)) {
             System.out.println("Inserisci l'ISBN della rivista:");
             String isbn = scanner.nextLine();
+            if (isbn.length() != 10) {
+                throw new stringLength("ISBN non valido");
+            }
+
             System.out.println("Inserisci il titolo della rivista:");
             String titolo = scanner.nextLine();
+
             System.out.println("Inserisci l'anno di pubblicazione della rivista:");
             int anno = scanner.nextInt();
-            scanner.nextLine(); // Consuma il carattere newline dopo nextInt
+            if (!scanner.hasNextInt()) {
+                throw new invalidNumber("Non hai inserito un numero!.");
+            }
+
+            scanner.nextLine();
             System.out.println("Inserisci la lunghezza della rivista:");
             int lunghezza = scanner.nextInt();
-            scanner.nextLine(); // Consuma il carattere newline dopo nextInt
+            if (!scanner.hasNextInt()) {
+                throw new invalidNumber("Non hai inserito un numero!.");
+            }
+
+            scanner.nextLine();
             System.out.println("Inserisci la periodicità della rivista (SETTIMANALE, MENSILE o SEMESTRALE):");
             String periodicità = scanner.nextLine();
+            if (!periodicità.equals("SETTIMANALE") && !periodicità.equals("MENSILE") && !periodicità.equals("SEMESTRALE")) {
+                throw new InvalidPeriodicity("Periodicità non esistente.");
+            }
 
             Riviste rivista = new Riviste(isbn, titolo, anno, lunghezza, periodicità);
             set.add(rivista);
         } else {
-            System.out.println("Scelta non valida.");
+            System.out.println("Qualcosa è andato storto.");
         }
         System.out.println(set);
         scanner.close();
