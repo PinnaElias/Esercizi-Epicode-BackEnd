@@ -35,4 +35,12 @@ public class Libri extends Stampato {
                 "Autore: " + author+ ", " + "Genere: "+ genre +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Libri libro = (Libri) o;
+        return ISBN.equals(libro.ISBN);
+    }
 }

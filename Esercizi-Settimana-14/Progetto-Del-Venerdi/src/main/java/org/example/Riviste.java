@@ -38,5 +38,11 @@ public class Riviste extends Stampato {
                 "periodicità: " + periodicity +
                 '}';
     }
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Riviste rivista = (Riviste) o;
+        return ISBN.equals(rivista.ISBN);
+    }
 }

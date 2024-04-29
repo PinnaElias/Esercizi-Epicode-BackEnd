@@ -1,10 +1,14 @@
 package org.example;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws invalidNumber, stringLength {
 
         Riviste uno = new Riviste("8898050933", "Rolling Stone Italia", 2024, 272, "MENSILE");
         Libri due = new Libri("6698057933", "Dawn of The Golden Witch", 2009, 350,
@@ -14,7 +18,6 @@ public class Main {
                 "Tohya Hachijo", "Mistery");
         Riviste cinque = new Riviste("8894450913", "Vogue Italia", 2021, 200, "MENSILE");
         Riviste sei = new Riviste("8994420913", "La Rassegna Della Letteratura Italiana", 2019, 300, "SEMESTRALE");
-
 
 
         HashSet<Stampato> set = new HashSet<>();
@@ -27,12 +30,21 @@ public class Main {
 
 
 
-        addToCatalogue(set);
-        System.out.println(set);
+        Scanner isbnScan = new Scanner(System.in);
+        String searchCode = isbnScan.nextLine().trim();
+
+        Stampato risultato = searchByISBN(set, searchCode);
+        if (risultato != null && searchCode.length() == 10) {
+            System.out.println("Elemento trovato: " + risultato);
+        } else {
+            System.out.println("Nessun elemento trovato.");
+        }
+
+
     }
 
 
-    public static void addToCatalogue(HashSet<Stampato> set) {
+    public static void addToCatalogue(HashSet<Stampato> set) throws invalidNumber, stringLength {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Vuoi aggiungere un libro o una rivista? (scrivi 'libro' o 'rivista'): ");
@@ -40,17 +52,17 @@ public class Main {
 
         if ("libro".equals(scelta)) {
 
-                System.out.println("Inserisci l'ISBN del libro:");
-                String isbn = scanner.nextLine();
+            System.out.println("Inserisci l'ISBN del libro:");
+            String isbn = scanner.nextLine();
 
             System.out.println("Inserisci il titolo del libro:");
             String titolo = scanner.nextLine();
             System.out.println("Inserisci l'anno di pubblicazione del libro:");
             int anno = scanner.nextInt();
-            scanner.nextLine(); // Consuma il carattere newline dopo nextInt
+            scanner.nextLine();
             System.out.println("Inserisci la lunghezza del libro:");
             int lunghezza = scanner.nextInt();
-            scanner.nextLine(); // Consuma il carattere newline dopo nextInt
+            scanner.nextLine();
             System.out.println("Inserisci l'autore del libro:");
             String autore = scanner.nextLine();
             System.out.println("Inserisci il genere del libro:");
@@ -77,8 +89,78 @@ public class Main {
         } else {
             System.out.println("Scelta non valida.");
         }
-
+        System.out.println(set);
         scanner.close();
+    }
+
+    public static Stampato searchByISBN(HashSet<Stampato> set, String isbn) {
+        for (Stampato stampato : set) {
+            if (stampato.getISBN().equals(isbn)) {
+                return stampato;
+            }
+        }
+        return null;
+    }
+
+
+
+    public static void checkStringLength(String str) throws stringLength {
+        if (str.length() != 10) {
+            throw new stringLength("La lunghezza della stringa non è esattamente di 10 caratteri.");
+        }
+    }
+
+    public static void remove(HashSet<Stampato> set, String isbn) {
+        Iterator<Stampato> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Stampato stampato = iterator.next();
+            if (stampato.getISBN().equals(isbn)) {
+                iterator.remove();
+                System.out.println("Elemento con ISBN " + isbn + " rimosso con successo.");
+                return;
+            }
+        }
+        System.out.println("Nessun elemento con ISBN " + isbn + " trovato.");
+    }
+
+    public static void searchByYear(HashSet<Stampato> set, int year) {
+        boolean found = false;
+        for (Stampato stampato : set) {
+            if (stampato.getYear() == year) {
+                System.out.println("Elemento trovato: " + stampato);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Nessun elemento trovato per l'anno " + year);
+        }
+    }
+
+    public static void searchByAuthor(HashSet<Stampato> set, String author) {
+        boolean found = false;
+        for (Stampato stampato : set) {
+            if (stampato instanceof Libri libro) {
+                if (libro.getAuthor().equals(author)) {
+                    System.out.println("Elemento trovato: " + libro);
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("Nessun libro trovato per l'autore " + author);
+        }
+    }
+
+    public static void saveLibrary(HashSet<Stampato> set, String fileName) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (Stampato stampato : set) {
+                writer.write(stampato.toString());
+                writer.newLine();
+            }
+            System.out.println("Archivio scritto su file con successo.");
+        } catch (IOException e) {
+            System.err.println("Errore durante la scrittura del file: " + e.getMessage());
+        }
     }
 }
 

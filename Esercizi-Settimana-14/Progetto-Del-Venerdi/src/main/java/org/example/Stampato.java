@@ -3,7 +3,7 @@ package org.example;
 import java.util.HashSet;
 import java.util.Scanner;
 
-abstract class Stampato {
+public abstract class Stampato {
 
     protected String ISBN;
     protected String title;
