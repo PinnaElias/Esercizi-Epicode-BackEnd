@@ -38,6 +38,7 @@ public class Riviste extends Stampato {
                 "periodicità: " + periodicity +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws invalidNumber, stringLength {
+    public static void main(String[] args) throws invalidNumber, stringLength, InvalidPeriodicity {
 
         Riviste uno = new Riviste("8898050933", "Rolling Stone Italia", 2024, 272, "MENSILE");
         Libri due = new Libri("6698057933", "Dawn of The Golden Witch", 2009, 350,
@@ -31,16 +31,18 @@ public class Main {
 
         addToCatalogue(set);
 
-     /*   Scanner isbnScan = new Scanner(System.in);
+        Scanner isbnScan = new Scanner(System.in);
         String searchCode = isbnScan.nextLine().trim();
 
-        Stampato risultato = searchByISBN(set, searchCode);
-        if (risultato != null && searchCode.length() == 10) {
+        Stampato risultato = set.stream()
+                .filter(e -> e.getISBN().equals(searchCode) && searchCode.length() == 10)
+                .findAny().orElse(null);
+
+        if (risultato != null) {
             System.out.println("Elemento trovato: " + risultato);
         } else {
             System.out.println("Nessun elemento trovato.");
         }
-*/
 
     }
 
@@ -54,28 +56,17 @@ public class Main {
         if ("libro".equals(scelta)) {
             System.out.println("Inserisci l'ISBN del libro:");
             String isbn = scanner.nextLine();
-            if (isbn.length() != 10) {
-                throw new stringLength("ISBN non valido");
-            }
+            checkStringLength(isbn);
 
             System.out.println("Inserisci il titolo del libro:");
             String titolo = scanner.nextLine();
 
-
             System.out.println("Inserisci l'anno di pubblicazione del libro:");
-            int anno = scanner.nextInt();
-            if (!scanner.hasNextInt()) {
-                throw new invalidNumber("Non hai inserito un numero!.");
-            }
+            int anno = validateInput(scanner);
 
-            scanner.nextLine();
             System.out.println("Inserisci la lunghezza del libro:");
-            int lunghezza = scanner.nextInt();
-            if (!scanner.hasNextInt()) {
-                throw new invalidNumber("Non hai inserito un numero!.");
-            }
+            int lunghezza = validateInput(scanner);
 
-            scanner.nextLine();
             System.out.println("Inserisci l'autore del libro:");
             String autore = scanner.nextLine();
 
@@ -88,27 +79,17 @@ public class Main {
         } else if ("rivista".equals(scelta)) {
             System.out.println("Inserisci l'ISBN della rivista:");
             String isbn = scanner.nextLine();
-            if (isbn.length() != 10) {
-                throw new stringLength("ISBN non valido");
-            }
+            checkStringLength(isbn);
 
             System.out.println("Inserisci il titolo della rivista:");
             String titolo = scanner.nextLine();
 
             System.out.println("Inserisci l'anno di pubblicazione della rivista:");
-            int anno = scanner.nextInt();
-            if (!scanner.hasNextInt()) {
-                throw new invalidNumber("Non hai inserito un numero!.");
-            }
+            int anno = validateInput(scanner);
 
-            scanner.nextLine();
             System.out.println("Inserisci la lunghezza della rivista:");
-            int lunghezza = scanner.nextInt();
-            if (!scanner.hasNextInt()) {
-                throw new invalidNumber("Non hai inserito un numero!.");
-            }
+            int lunghezza = validateInput(scanner);
 
-            scanner.nextLine();
             System.out.println("Inserisci la periodicità della rivista (SETTIMANALE, MENSILE o SEMESTRALE):");
             String periodicità = scanner.nextLine();
             if (!periodicità.equals("SETTIMANALE") && !periodicità.equals("MENSILE") && !periodicità.equals("SEMESTRALE")) {
@@ -124,34 +105,22 @@ public class Main {
         scanner.close();
     }
 
-    public static Stampato searchByISBN(HashSet<Stampato> set, String isbn) {
-        for (Stampato stampato : set) {
-            if (stampato.getISBN().equals(isbn)) {
-                return stampato;
-            }
+    public static int validateInput(Scanner scanner) throws invalidNumber {
+        if (!scanner.hasNextInt()) {
+            throw new invalidNumber("Non hai inserito un numero!.");
         }
-        return null;
+        return scanner.nextInt();
     }
-
-
 
     public static void checkStringLength(String str) throws stringLength {
         if (str.length() != 10) {
-            throw new stringLength("La lunghezza della stringa non è esattamente di 10 caratteri.");
+            throw new stringLength("ISBN non valido");
         }
     }
 
     public static void remove(HashSet<Stampato> set, String isbn) {
-        Iterator<Stampato> iterator = set.iterator();
-        while (iterator.hasNext()) {
-            Stampato stampato = iterator.next();
-            if (stampato.getISBN().equals(isbn)) {
-                iterator.remove();
-                System.out.println("Elemento con ISBN " + isbn + " rimosso con successo.");
-                return;
-            }
-        }
-        System.out.println("Nessun elemento con ISBN " + isbn + " trovato.");
+        set.removeIf(stampato -> stampato.getISBN().equals(isbn));
+        System.out.println("Elemento con ISBN " + isbn + " rimosso con successo.");
     }
 
     public static void searchByYear(HashSet<Stampato> set, int year) {
@@ -184,16 +153,19 @@ public class Main {
 
     public static void saveLibrary(HashSet<Stampato> set, String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
-            for (Stampato stampato : set) {
-                writer.write(stampato.toString());
-                writer.newLine();
-            }
+            set.forEach(stampato -> {
+                try {
+                    writer.write(stampato.toString());
+                    writer.newLine();
+                } catch (IOException e) {
+                    System.err.println("Errore durante la scrittura del file: " + e.getMessage());
+                }
+            });
             System.out.println("Archivio scritto su file con successo.");
         } catch (IOException e) {
             System.err.println("Errore durante la scrittura del file: " + e.getMessage());
         }
     }
 }
-
 
 

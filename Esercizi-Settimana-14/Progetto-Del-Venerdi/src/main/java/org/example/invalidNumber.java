@@ -1,9 +1,11 @@
 package org.example;
 
-public class invalidNumber extends Exception{
+public class invalidNumber extends Exception {
     public invalidNumber(String message) {
-    super(message);
+        super(message);
     }
-    public invalidNumber(){};
+
+    public invalidNumber() {
+    }
 
 }

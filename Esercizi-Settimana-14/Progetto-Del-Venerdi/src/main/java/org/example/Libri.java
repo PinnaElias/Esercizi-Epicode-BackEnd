@@ -11,7 +11,7 @@ public class Libri extends Stampato {
     protected String author;
     protected String genre;
 
-    public String getAuthor(){
+    public String getAuthor() {
         return author;
     }
 
@@ -32,7 +32,7 @@ public class Libri extends Stampato {
         return "Libro {" +
                 "ISBN: " + ISBN + ", " + "Titolo: " + title + ", " + "Anno di uscita: " + year
                 + ", " + "Lunghezza in pagine: " + length + ", " +
-                "Autore: " + author+ ", " + "Genere: "+ genre +
+                "Autore: " + author + ", " + "Genere: " + genre +
                 '}';
     }
 
