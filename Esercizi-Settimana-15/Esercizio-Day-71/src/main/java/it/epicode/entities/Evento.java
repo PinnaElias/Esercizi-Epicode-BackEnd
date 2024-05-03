@@ -2,6 +2,7 @@ package it.epicode.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity //@ = annotations
@@ -10,7 +11,9 @@ public class Evento {
 
     @Id
     @GeneratedValue
-    private int id; //dovrebbe generare id incrementali, il c
+    @TableGenerator(name = "eventi_id_table", initialValue = 0, allocationSize = 1)
+    private int id; //dovrebbe generare id incrementali
+
 
     private String title;
     private LocalDate eventDate;
@@ -22,15 +25,19 @@ public class Evento {
 
     private int maxNumberOfPartecipants;
 
+    @OneToMany(mappedBy = "evento")
+    private List<Partecipazione> partecipazioni;
+    private Location location;
 
-    public Evento(int id, String title, LocalDate eventDate, String description,
-                  TipoEvento tipoEvento, int maxNumberOfPartecipants) {
+    public Evento(int id, String title, LocalDate eventDate, String description, TipoEvento tipoEvento, int maxNumberOfPartecipants, List<Partecipazione> partecipazioni, Location location) {
         this.id = id;
         this.title = title;
         this.eventDate = eventDate;
         this.description = description;
         this.tipoEvento = tipoEvento;
         this.maxNumberOfPartecipants = maxNumberOfPartecipants;
+        this.partecipazioni = partecipazioni;
+        this.location = location;
     }
 
     public Evento() {
