@@ -8,6 +8,8 @@ public class Libri extends Stampato {
         setGenre(genre);
     }
 
+
+
     protected String author;
     protected String genre;
 
@@ -29,10 +31,13 @@ public class Libri extends Stampato {
 
     @Override
     public String toString() {
-        return "Libro {" +
-                "ISBN: " + ISBN + ", " + "Titolo: " + title + ", " + "Anno di uscita: " + year
-                + ", " + "Lunghezza in pagine: " + length + ", " +
-                "Autore: " + author + ", " + "Genere: " + genre +
+        return "Libri{" +
+                "author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", length=" + length +
                 '}';
     }
 
