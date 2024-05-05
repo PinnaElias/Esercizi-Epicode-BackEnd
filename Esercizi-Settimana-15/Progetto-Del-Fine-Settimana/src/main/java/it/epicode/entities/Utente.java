@@ -1,22 +1,29 @@
 package it.epicode.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "utente")
 public class Utente {
+
+    @Column(nullable = false)
     String name;
+
+    @Column(nullable = false)
     String surname;
+
+    @Column(nullable = false)
     LocalDate date_of_birth;
 
     @Id
     @GeneratedValue
     UUID membership_id;
+
+    @OneToMany(mappedBy = "utente")
+    private List<Prestito> prestiti;
 
     public Utente(String name, String surname, LocalDate date_of_birth, UUID membership_id) {
         this.name = name;

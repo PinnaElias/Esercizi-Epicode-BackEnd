@@ -1,7 +1,12 @@
 package it.epicode.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.UUID;
 
+@Entity
 public class Libri extends Stampato {
 
     public Libri(UUID ISBN, String title, int year, int length, String author, Generi genre) {
@@ -14,7 +19,11 @@ public class Libri extends Stampato {
         super();
     }
 
+    @Column(nullable = false)
     protected String author;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     protected Generi genre;
 
     public String getAuthor() {

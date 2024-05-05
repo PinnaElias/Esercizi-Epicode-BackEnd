@@ -1,8 +1,13 @@
 package it.epicode.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.swing.plaf.PanelUI;
 import java.util.UUID;
 
+@Entity
 public class Riviste extends Stampato {
     public Riviste(UUID ISBN, String title, int year, int length, Periodicità periodicity) {
         super(ISBN, title, year, length);
@@ -12,6 +17,8 @@ public class Riviste extends Stampato {
     public Riviste() {
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     protected Periodicità periodicity;
 
     public Periodicità getPeriodicity() {
