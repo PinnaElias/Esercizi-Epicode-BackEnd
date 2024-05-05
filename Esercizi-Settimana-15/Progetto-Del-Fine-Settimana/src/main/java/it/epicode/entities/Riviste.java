@@ -1,41 +1,36 @@
 package it.epicode.entities;
 
-import java.util.Arrays;
+import javax.swing.plaf.PanelUI;
+import java.util.UUID;
 
 public class Riviste extends Stampato {
-    public Riviste(String ISBN, String title, int year, int length, String periodicity) {
+    public Riviste(UUID ISBN, String title, int year, int length, Periodicità periodicity) {
         super(ISBN, title, year, length);
         setPeriodicity(periodicity);
     }
 
-    protected String[] possiblePeriodicity = {"SETTIMANALE", "MENSILE", "SEMESTRALE"};
-    protected String periodicity;
-
-    public String[] getPossiblePeriodicity() {
-        return possiblePeriodicity;
+    public Riviste() {
     }
 
-    public String getPeriodicity() {
+    protected Periodicità periodicity;
+
+    public Periodicità getPeriodicity() {
         return periodicity;
     }
 
-    public void setPeriodicity(String periodicityInput) {
-        for (String prd : possiblePeriodicity) {
-            if (prd.equalsIgnoreCase(periodicityInput)) {
-                this.periodicity = periodicityInput;
-                return;
-            }
-        }
-        System.out.println("Invalid input");
-    }
 
+    public void setPeriodicity(Periodicità periodicity) {
+        this.periodicity = periodicity;
+    }
 
     @Override
     public String toString() {
-        return "Rivista {" +
-                "ISBN: " + ISBN + ", " + "Titolo: " + title + ", " + "Anno di uscita: " + year
-                + ", " + "Lunghezza in pagine: " + length + ", " +
-                "periodicità: " + periodicity +
+        return "Riviste{" +
+                "periodicity=" + periodicity +
+                ", ISBN=" + ISBN +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", length=" + length +
                 '}';
     }
 

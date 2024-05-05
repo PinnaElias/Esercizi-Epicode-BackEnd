@@ -1,23 +1,27 @@
 package it.epicode.entities;
 
+import java.util.UUID;
+
 public class Libri extends Stampato {
 
-    public Libri(String ISBN, String title, int year, int length, String author, String genre) {
+    public Libri(UUID ISBN, String title, int year, int length, String author, Generi genre) {
         super(ISBN, title, year, length);
-        setAuthor(author);
-        setGenre(genre);
+        this.author = author;
+        this.genre = genre;
     }
 
-
+    public Libri(){
+        super();
+    }
 
     protected String author;
-    protected String genre;
+    protected Generi genre;
 
     public String getAuthor() {
         return author;
     }
 
-    public String getGenre() {
+    public Generi getGenre() {
         return genre;
     }
 
@@ -25,7 +29,7 @@ public class Libri extends Stampato {
         this.author = author;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Generi genre) {
         this.genre = genre;
     }
 
@@ -33,8 +37,8 @@ public class Libri extends Stampato {
     public String toString() {
         return "Libri{" +
                 "author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
-                ", ISBN='" + ISBN + '\'' +
+                ", genre=" + genre +
+                ", ISBN=" + ISBN +
                 ", title='" + title + '\'' +
                 ", year=" + year +
                 ", length=" + length +

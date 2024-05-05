@@ -1,12 +1,21 @@
 package it.epicode.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Entity
+@Table(name = "utente")
 public class Utente {
     String name;
     String surname;
     LocalDate date_of_birth;
+
+    @Id
+    @GeneratedValue
     UUID membership_id;
 
     public Utente(String name, String surname, LocalDate date_of_birth, UUID membership_id) {
@@ -16,7 +25,8 @@ public class Utente {
         this.membership_id = membership_id;
     }
 
-    public Utente(){}
+    public Utente() {
+    }
 
     public String getName() {
         return name;
