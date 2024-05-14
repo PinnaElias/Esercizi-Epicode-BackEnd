@@ -7,7 +7,14 @@
         <option value="$PROJECT_DIR$/Esercizi-Settimana-14/Progetto-Del-Venerdi/pom.xml" />
         <option value="$PROJECT_DIR$/Esercizi-Settimana-15/Esercizio-Day-71/pom.xml" />
         <option value="$PROJECT_DIR$/Esercizi-Settimana-15/Progetto-Del-Fine-Settimana/pom.xml" />
+        <option value="$PROJECT_DIR$/Esercizi-Settimana-17/Esercizio-Day-80/pom.xml" />
+        <option value="$PROJECT_DIR$/Esercizi-Settimana-17/Esercizio-Day-80/Esercizio-Day-80/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Esercizi-Settimana-17/Esercizio-Day-80/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">

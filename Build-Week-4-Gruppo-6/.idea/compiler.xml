@@ -6,16 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Esercizio-Day-80" />
-        <module name="Esercizio-Day-71" />
-        <module name="Progetto-Del-Fine-Settimana" />
-        <module name="Progetto-Del-Venerdi" />
+        <module name="atac" />
+        <module name="L5-W15-project" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Esercizio-Day-80" options="-parameters" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="untitled" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>
