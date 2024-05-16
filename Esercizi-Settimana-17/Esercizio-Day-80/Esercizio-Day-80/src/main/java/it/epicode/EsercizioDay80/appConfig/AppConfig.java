@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-    public Bevanda birra(){
-        Bevanda birra = new Bevanda();
-//        birra.setNome
-    }
+//    public Bevanda birra(){
+//        Bevanda birra = new Bevanda();
+////        birra.setNome
+//    }
 
 }
