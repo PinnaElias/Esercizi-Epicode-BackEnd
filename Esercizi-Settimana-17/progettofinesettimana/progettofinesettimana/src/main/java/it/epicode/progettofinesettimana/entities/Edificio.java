@@ -1,11 +1,14 @@
 package it.epicode.progettofinesettimana.entities;
 
-import it.epicode.progettofinesettimana.enums.CategoriaPostazioneEnum;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 import java.util.UUID;
 
+@Data
+@Entity
 public class Edificio {
 
     @Id
@@ -13,8 +16,6 @@ public class Edificio {
     private UUID id;
 
     private String name;
-    private String description;
-    private CategoriaPostazioneEnum type;
-    private int maxCapacity;
-    private Postazione location;
+    private String adress;
+    private String city;
 }
