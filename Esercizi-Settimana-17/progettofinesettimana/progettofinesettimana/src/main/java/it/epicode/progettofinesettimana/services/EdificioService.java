@@ -2,12 +2,14 @@ package it.epicode.progettofinesettimana.services;
 
 import it.epicode.progettofinesettimana.entities.Edificio;
 import it.epicode.progettofinesettimana.repositories.EdificioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.UUID;
 
 public class EdificioService {
 
+    @Autowired
     private EdificioRepository buildingRepo;
 
     public List<Edificio> getAllBuildings(){
