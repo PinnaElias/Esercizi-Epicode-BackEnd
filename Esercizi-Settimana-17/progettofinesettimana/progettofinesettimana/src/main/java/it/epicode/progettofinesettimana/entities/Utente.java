@@ -2,7 +2,10 @@ package it.epicode.progettofinesettimana.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -14,5 +17,7 @@ public class Utente {
     private String name;
     private String surname;
     private String email;
-    private Prenotazione reservation;
+
+    @OneToMany(mappedBy = "utente")
+    private List <Prenotazione> reservations;
 }

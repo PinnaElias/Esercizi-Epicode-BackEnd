@@ -1,8 +1,6 @@
 package it.epicode.progettofinesettimana.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -15,8 +13,14 @@ public class Prenotazione {
     @Id
     @GeneratedValue
     private UUID id;
-    private Postazione location; //Location sarà poi collegata a edificio; one to one?
+
+    @OneToOne
+    private Postazione location;//Location sarà poi collegata a edificio; one to one?
+
     private LocalDate date;
+
+    @ManyToOne
+    @JoinColumn(name = "Utente_username")
     private Utente guest;
 
 }

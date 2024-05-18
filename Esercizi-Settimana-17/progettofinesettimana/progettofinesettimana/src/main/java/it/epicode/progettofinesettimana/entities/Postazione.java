@@ -19,5 +19,6 @@ public class Postazione {
     private int maxCapacity;
 
     @ManyToOne
+    @JoinColumn(name = "edificio_id")
     private Edificio building;
 }
