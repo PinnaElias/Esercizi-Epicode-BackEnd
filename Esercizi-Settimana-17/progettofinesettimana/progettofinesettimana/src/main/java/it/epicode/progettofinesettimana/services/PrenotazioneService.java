@@ -32,9 +32,9 @@ public class PrenotazioneService {
         return this.bookingRepo.findById(id).orElse(null);
     }
 
-    public Prenotazione saveBooking(UUID locationId, UUID userId, LocalDate date){
+    public Prenotazione saveBooking(UUID locationId, String userUserName, LocalDate date){
 
-            Utente utente = userRepo.findById(String.valueOf(userId)).orElseThrow(() -> new RuntimeException("Utente non trovato"));
+            Utente utente = userRepo.findById(String.valueOf(userUserName)).orElseThrow(() -> new RuntimeException("Utente non trovato"));
 
             Postazione postazione = locationRepo.findById(locationId).orElseThrow(() -> new RuntimeException("Postazione non trovata"));
 
