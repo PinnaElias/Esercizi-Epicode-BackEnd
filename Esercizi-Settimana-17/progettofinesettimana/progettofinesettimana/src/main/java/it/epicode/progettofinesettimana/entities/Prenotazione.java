@@ -20,7 +20,10 @@ public class Prenotazione {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "Utente_username")
+    @JoinColumn(name = "utente_username")
     private Utente guest;
+
+    private boolean isValid;
+    private LocalDate prenotationDate;
 
 }
