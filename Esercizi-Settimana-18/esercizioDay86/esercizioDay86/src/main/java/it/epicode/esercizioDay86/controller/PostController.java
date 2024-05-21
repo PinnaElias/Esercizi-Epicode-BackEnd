@@ -33,6 +33,8 @@ public class PostController {
     @GetMapping("/{id}")
     public ResponseEntity<Post> getSinglePost(@PathVariable int id) {
         Post post = postService.getPostById(id);
+
+//      controllo nel caso il post non esistesse:
         if (post == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
