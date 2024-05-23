@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/posts")
+@RequestMapping("/api/posts") //definisce gli endpoint base su cui fare le altre operazioni (che specificheranno poi endpoint a loro volta)
 public class PostController {
 
     //  primo passo: collegare al service
@@ -20,7 +20,7 @@ public class PostController {
     private PostService postService;
 
     //nei contesti reali si usa la responseEntity
-    @GetMapping("/") //mappa il metodo HTTP, in questo caso GET
+    @GetMapping //mappa il metodo HTTP, in questo caso GET
     public ResponseEntity<List<Post>> getPosts() {
         //una ResponseEntity è un entità che come risposta (personalizzata) ci torna <List><Post>>
         //in questo caso la usiamo per ottenere tutti i post e un codice di risposta 200
@@ -41,7 +41,7 @@ public class PostController {
         return new ResponseEntity<>(post, HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping //volendo si possono togliere le tonde quando l'endpoint corrisponde a quello di inizio class
     public ResponseEntity<Post> createSinglePost(@RequestBody CreatePostRequestBody newPost) {
         return new ResponseEntity<>(postService.addPost(newPost), HttpStatusCode.valueOf(201));
 
