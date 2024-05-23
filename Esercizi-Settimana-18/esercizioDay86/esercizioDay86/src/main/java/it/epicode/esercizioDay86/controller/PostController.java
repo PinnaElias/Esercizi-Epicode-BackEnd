@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/posts") //definisce gli endpoint base su cui fare le altre operazioni (che specificheranno poi endpoint a loro volta)
@@ -31,7 +32,7 @@ public class PostController {
 
 //  a differenza di prima ci facciamo tornare un JSON con un singolo post
     @GetMapping("/{id}")
-    public ResponseEntity<Post> getSinglePost(@PathVariable int id) {
+    public ResponseEntity<Post> getSinglePost(@PathVariable UUID id) {
         Post post = postService.getPostById(id);
 
 //      controllo nel caso il post non esistesse:
