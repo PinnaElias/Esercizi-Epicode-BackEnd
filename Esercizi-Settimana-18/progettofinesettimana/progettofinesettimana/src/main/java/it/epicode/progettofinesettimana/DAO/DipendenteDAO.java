@@ -1,7 +1,6 @@
 package it.epicode.progettofinesettimana.DAO;
 
 import it.epicode.progettofinesettimana.entities.Dipendente;
-import it.epicode.progettofinesettimana.models.Dipendente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.UUID;
