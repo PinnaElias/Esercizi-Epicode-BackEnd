@@ -2,23 +2,21 @@ package it.epicode.progettofinesettimana.entities;
 
 import it.epicode.progettofinesettimana.enums.TipoDispositivo;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Random;
+import java.util.UUID;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 public class Dispositivo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private UUID id;
+
     private String tipo;
+
     @Enumerated(EnumType.STRING)
     private TipoDispositivo tipoDispositivo;
 

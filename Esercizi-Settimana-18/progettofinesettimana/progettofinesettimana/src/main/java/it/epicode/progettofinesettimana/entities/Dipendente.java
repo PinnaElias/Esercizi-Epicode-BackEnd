@@ -1,25 +1,22 @@
 package it.epicode.progettofinesettimana.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Data
 public class Dipendente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     public String avatar;
     private String username;
     private String name;
     private String surname;
     private String email;
+
     @OneToOne
     @JoinColumn(name = "dispositivo_id")
     private Dispositivo dispositivo;

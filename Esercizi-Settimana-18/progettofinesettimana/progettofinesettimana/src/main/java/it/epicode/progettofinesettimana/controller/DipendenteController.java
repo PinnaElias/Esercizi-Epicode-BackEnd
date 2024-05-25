@@ -4,7 +4,6 @@ package it.epicode.progettofinesettimana.controller;
 import it.epicode.progettofinesettimana.DTO.DipendenteDTO;
 import it.epicode.progettofinesettimana.entities.Dipendente;
 import it.epicode.progettofinesettimana.services.DipendenteService;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
