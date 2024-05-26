@@ -34,7 +34,7 @@ public class ExceptionsHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorsPayload handleGenericErrors(Exception ex) {
-        return new ErrorsPayload("Qualcosa è andato storto.", LocalDateTime.now());
+        return new ErrorsPayload("Qualcosa è andato storto. ", LocalDateTime.now());
     }
 
 }
