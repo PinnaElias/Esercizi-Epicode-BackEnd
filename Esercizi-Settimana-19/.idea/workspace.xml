@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2b49e6e-6a4f-4e06-8bfc-cb95cf9a280f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/DAO/DipendenteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/DAO/DispositivoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/DTO/DipendenteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/DTO/DispositivoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/config/ServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/controller/DipendenteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/controller/DispositivoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/entities/Dipendente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/entities/Dispositivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/enums/TipoDispositivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/esercizioDay90-91.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/exceptions/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/exceptions/ErrorListPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/exceptions/ErrorsPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/exceptions/ExceptionsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/services/DipendenteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/java/it/epicode/progettofinesettimana/services/DispositivoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esercizioDay90-91/esercizioDay90-91/src/test/java/it/epicode/progettofinesettimana/ProgettofinesettimanaApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Esercizio-Day-62/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Esercizio-Day-62/SIM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Esercizio-Day-62/rettangolo.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "PinnaElias"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PinnaElias/Esercizi-Epicode-BackEnd.git",
+    "accountId": "e05583a3-8c58-4d6a-af67-4ce866544dee"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2h6IJlrmRaAUSMogUURJywQ1Iwa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/39346/Desktop/Esercizi-Epicode-BackEnd/Esercizi-Settimana-19",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2b49e6e-6a4f-4e06-8bfc-cb95cf9a280f" name="Changes" comment="" />
+      <created>1716908030351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716908030351</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
