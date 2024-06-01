@@ -3,8 +3,6 @@ package it.epicode.progettoweekend.services;
 import it.epicode.progettoweekend.DAO.EventsDAO;
 import it.epicode.progettoweekend.DTO.EventDTO;
 import it.epicode.progettoweekend.entities.Events;
-import it.epicode.progettoweekend.entities.User;
-import it.epicode.progettoweekend.exception.BadRequestException;
 import it.epicode.progettoweekend.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
