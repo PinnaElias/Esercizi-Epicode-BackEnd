@@ -1,0 +1,56 @@
+package it.epicode.progettoweekend.services;
+
+import it.epicode.progettoweekend.entities.Events;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import java.util.UUID;
+
+@Service
+public class EventsService {
+
+        @Autowired
+        private EventsDAO eventsDAO;
+
+
+        public Page<Events> getEvents(int pageNumber, int size, String orderBy) {
+            if (size > 100) size = 100;
+            Pageable pageable = PageRequest.of(pageNumber, size, Sort.by(orderBy));
+            return eventsDAO.findAll(pageable);
+        }
+
+
+        public Events findById(UUID eventId) {
+            return eventsDAO.findById(eventId).orElseThrow(() -> new NotFoundException(eventId));
+        }
+
+        public Events findByIdAndUpdate(UUID EventsId, Events updateEvents) {
+            Events found = this.findById(EventsId);
+
+            return eventsDAO.save(found);
+        }
+        public Events save(EventDTO newevent) {
+            return eventsDAO.save(
+                    new Events(newevent.title(),newevent.description(),newevent.date(),newevent.place(), newevent.maxposti())
+            );
+        }
+
+        public void findByIdAndDelete(UUID EventsId) {
+            Events found = this.findById(EventsId);
+            eventsDAO.delete(found);
+        }
+        public void reserve(UUID EventsId, User user){
+            Events found=this.findById(EventsId);
+            boolean user1= found.getUsers().stream().noneMatch(u-> u.getId().equals(user.getId()));
+            if (found.getUsers().size()< found.getMaxposti() || user1){
+                found.addUser(user);
+                eventsDAO.save(found);
+            }else {
+                throw new BadRequestException("tutti i posti sono già prenotati");
+            }
+        }
+}
