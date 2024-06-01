@@ -39,17 +39,24 @@ public class EventsService {
             return eventsDAO.save(found);
         }
         public Events save(EventDTO newevent) {
-            return eventsDAO.save(
-                    new Events(newevent.title(),newevent.description(),newevent.date(),newevent.place(), newevent.maxPosti())
-            );
+
+            Events event = new Events();
+            event.setDate(newevent.date());
+            event.setDescription(newevent.description());
+            event.setTitle(newevent.title());
+            event.setPlace(newevent.place());
+            event.setMaxPosti(newevent.maxPosti());
+            return eventsDAO.save(event);
+
         }
 
         public void findByIdAndDelete(UUID EventsId) {
             Events found = this.findById(EventsId);
             eventsDAO.delete(found);
         }
+
         public void reserve(UUID EventsId, User user){
-            Events found=this.findById(EventsId);
+            Events found = this.findById(EventsId);
             boolean user1= found.getUsers().stream().noneMatch(u-> u.getId().equals(user.getId()));
             if (found.getUsers().size()< found.getMaxPosti() || user1){
                 found.addUser(user);

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {
-    
+
     @Autowired
     private UserService usersService;
 
@@ -21,6 +21,7 @@ public class AuthService {
 
     @Autowired
     private UserDAO usersDAO;
+
     @Autowired
     private JWTTools jwtTools;
 
@@ -35,11 +36,15 @@ public class AuthService {
 
     public User saveUser(NewUserDTO payload) {
         usersDAO.findByEmail(payload.email()).ifPresent(user -> {
-            throw new BadRequestException("L'email " + user.getEmail() + " è già in uso!");
+            throw new BadRequestException("L'email " + user.getEmail() + " è stata già utilizzata.");
         });
 
-        User newUser = new User(payload.name(), payload.surname(),
-                payload.email(), bcrypt.encode(payload.password()));
+        User newUser = new User();
+        newUser.setEmail(payload.email());
+        newUser.setName(payload.name());
+        newUser.setSurname(payload.surname());
+        newUser.setPassword(bcrypt.encode(payload.password()));
+
         return usersDAO.save(newUser);
     }
 }
