@@ -38,6 +38,5 @@ public class Config {
     @Bean
     PasswordEncoder getBCrypt() {
         return new BCryptPasswordEncoder(11);
-
     }
 }
