@@ -1,6 +1,8 @@
 package it.epicode.progettoweekend.security;
 
 import it.epicode.progettoweekend.entities.User;
+import it.epicode.progettoweekend.exception.UnauthorizedException;
+import it.epicode.progettoweekend.services.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Component
@@ -25,11 +28,12 @@ public class JWTFilter extends OncePerRequestFilter {
     private UserService usersService;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
 
         String authHeader = request.getHeader("Authorization");
         if (authHeader == null || !authHeader.startsWith("Bearer "))
-            throw new UnauthorizedException("Per favore metti il token nell'header");
+            throw new UnauthorizedException("L'header presenta un problema.");
 
         String accessToken = authHeader.substring(7);
 

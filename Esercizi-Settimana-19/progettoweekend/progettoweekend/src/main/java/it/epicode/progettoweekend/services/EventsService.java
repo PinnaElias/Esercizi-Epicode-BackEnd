@@ -1,6 +1,11 @@
 package it.epicode.progettoweekend.services;
 
+import it.epicode.progettoweekend.DAO.EventsDAO;
+import it.epicode.progettoweekend.DTO.EventDTO;
 import it.epicode.progettoweekend.entities.Events;
+import it.epicode.progettoweekend.entities.User;
+import it.epicode.progettoweekend.exception.BadRequestException;
+import it.epicode.progettoweekend.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -35,7 +40,7 @@ public class EventsService {
         }
         public Events save(EventDTO newevent) {
             return eventsDAO.save(
-                    new Events(newevent.title(),newevent.description(),newevent.date(),newevent.place(), newevent.maxposti())
+                    new Events(newevent.title(),newevent.description(),newevent.date(),newevent.place(), newevent.maxPosti())
             );
         }
 
@@ -46,7 +51,7 @@ public class EventsService {
         public void reserve(UUID EventsId, User user){
             Events found=this.findById(EventsId);
             boolean user1= found.getUsers().stream().noneMatch(u-> u.getId().equals(user.getId()));
-            if (found.getUsers().size()< found.getMaxposti() || user1){
+            if (found.getUsers().size()< found.getMaxPosti() || user1){
                 found.addUser(user);
                 eventsDAO.save(found);
             }else {

@@ -1,6 +1,10 @@
 package it.epicode.progettoweekend.controller;
 
+import it.epicode.progettoweekend.DTO.LoginResponseDTO;
+import it.epicode.progettoweekend.DTO.NewUserDTO;
+import it.epicode.progettoweekend.DTO.UserLoginDTO;
 import it.epicode.progettoweekend.entities.User;
+import it.epicode.progettoweekend.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

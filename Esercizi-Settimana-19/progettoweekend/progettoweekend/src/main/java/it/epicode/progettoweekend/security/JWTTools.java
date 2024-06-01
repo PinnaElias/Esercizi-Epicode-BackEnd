@@ -3,6 +3,7 @@ package it.epicode.progettoweekend.security;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import it.epicode.progettoweekend.entities.User;
+import it.epicode.progettoweekend.exception.UnauthorizedException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

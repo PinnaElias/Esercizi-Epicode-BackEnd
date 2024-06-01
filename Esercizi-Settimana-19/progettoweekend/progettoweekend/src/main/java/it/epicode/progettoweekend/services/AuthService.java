@@ -1,5 +1,10 @@
 package it.epicode.progettoweekend.services;
+import it.epicode.progettoweekend.DAO.UserDAO;
+import it.epicode.progettoweekend.DTO.NewUserDTO;
+import it.epicode.progettoweekend.DTO.UserLoginDTO;
 import it.epicode.progettoweekend.entities.User;
+import it.epicode.progettoweekend.exception.BadRequestException;
+import it.epicode.progettoweekend.exception.UnauthorizedException;
 import it.epicode.progettoweekend.security.JWTTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -7,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthService {
+    
     @Autowired
     private UserService usersService;
 
