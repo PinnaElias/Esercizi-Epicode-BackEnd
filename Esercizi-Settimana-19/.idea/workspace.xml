@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2b49e6e-6a4f-4e06-8bfc-cb95cf9a280f" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/src/main/java/it/epicode/progettofinesettimana/ProgettofinesettimanaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/progettofinesettimana/progettofinesettimana/src/test/java/it/epicode/progettofinesettimana/ProgettofinesettimanaApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,21 +30,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "PinnaElias"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PinnaElias&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/PinnaElias/Esercizi-Epicode-BackEnd.git",
-    "accountId": "e05583a3-8c58-4d6a-af67-4ce866544dee"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PinnaElias/Esercizi-Epicode-BackEnd.git&quot;,
+    &quot;accountId&quot;: &quot;e05583a3-8c58-4d6a-af67-4ce866544dee&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2h6IJlrmRaAUSMogUURJywQ1Iwa" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,12 +59,27 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/39346/Desktop/Esercizi-Epicode-BackEnd/Esercizi-Settimana-19",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Esercizi-Settimana-19" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Esercizi-Settimana-19" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716929365817</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <option name="closed" value="true" />
+      <created>1717236706143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236706143</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
